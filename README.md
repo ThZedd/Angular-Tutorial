@@ -38,20 +38,52 @@
 
 # 2. Most Important Patterns Used on Angular
 
+##### @Input
+
+**1. Declare it (Child)**
+```typescript
+ @Input() name = ''
+```
+
+**2. Send Data (Parent)**
+```html
+ <app-greeting [name]="'John'" (liked)="onLiked()" />
+```
+
+---
+
 ##### @Output
 
-1. Declare it (Child)
+**1. Declare it (Child)**
 ```typescript
 @Output() liked = new EventEmitter()
 ```
 
-2. Emit it (Child)
+**2. Emit it (Child)**
 ```typescript
     this.liked.emit();  
 ```
 
-3. Listen (Parent)
+**3. Listen (Parent)**
 
 ```typescript
     (liked)="onLiked()" 
 ```
+
+##### Content Projection
+
+**1. Declare it (Child)**
+```html
+<div class="card">
+    <ng-content/>
+</div>  
+```
+
+**2. Send the markup (Parent)**
+
+```html
+<app-card>
+    <b>Hello</b>
+</app-card> 
+```
+
