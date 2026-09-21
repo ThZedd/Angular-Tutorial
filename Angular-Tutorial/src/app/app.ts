@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Greeting } from './greeting/greeting';
 
 @Component({
-  imports: [RouterOutlet],
-  selector: 'app-root',
+  imports: [Greeting], // we need to add every component we use to the imports
+  selector: 'app-root', // gives our component a html tag
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('Angular-Tutorial');
+  name = 'Angular';
 }
