@@ -8,5 +8,12 @@ import { Greeting } from './greeting/greeting';
   templateUrl: './app.html',
 })
 export class App {
+
   name = 'Angular';
+
+  likeCount = 0;
+
+  onLiked(){
+    this.likeCount += 1;
+  }
 }

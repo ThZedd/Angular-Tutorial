@@ -33,3 +33,25 @@
 ---
 
 >ng g c NameOfTheComponent --inline-template -> Creates the component in just one file
+
+---
+
+# 2. Most Important Patterns Used on Angular
+
+##### @Output
+
+1. Declare it (Child)
+```typescript
+@Output() liked = new EventEmitter()
+```
+
+2. Emit it (Child)
+```typescript
+    this.liked.emit();  
+```
+
+3. Listen (Parent)
+
+```typescript
+    (liked)="onLiked()" 
+```
