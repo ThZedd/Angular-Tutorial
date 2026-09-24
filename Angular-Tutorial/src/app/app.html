@@ -1,5 +1,18 @@
 <h1>Hello {{ name }}</h1>
 <p>this paragraph lives in the app component</p>
+<p>{{ likeCount > 0 ?  'people liked this' : 'no one liked yet'}}</p>
 <p>Total Liked: {{ likeCount }}</p>
 <app-greeting [name]="'John'" (liked)="onLiked()" /> <!-- We use [] when is a event going out (sending data), and we use () when is a event coming in (receiving data)-->
-<app-card><b>Hello</b></app-card>
+<app-card>
+    <h3 card-title>Hello</h3>
+    <p card-body>This is my first projected card</p>
+    <button card-footer>Read More</button>
+</app-card>
+
+<p>{{message}}</p>
+
+<app-user-card [name]="user1.name" [role]="user1.role" [bio]="user1.bio" (follow)="onFollowed($event)"  />
+<app-user-card [name]="user2.name" [role]="user2.role" [bio]="user2.bio" (follow)="onFollowed($event)"  />
+
+<img [src]="avatarUrl" [alt]="user1.name">
+<button [disabled] = " isFollowingAll " [title]="isFollowingAll ? 'you cannot follow' : 'follow every user on this page'">Follow All</button>

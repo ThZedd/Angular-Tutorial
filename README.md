@@ -87,3 +87,19 @@
 </app-card> 
 ```
 
+# 3. Data travels
+
+##### Class --> View
+
+**1. {{ }} Interpolation - data into text**
+
+**2. [ ] Property Binding - sets a real property**
+
+##### View --> Class
+
+**( ) Event Binding - the parentheses**
+
+##### Both at once
+
+**[( )] Two-way Binding**
+
