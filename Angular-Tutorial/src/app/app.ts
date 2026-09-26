@@ -17,6 +17,12 @@ export class App {
   isFollowingAll: boolean = false;
   avatarUrl: string = 'https://picsum.photos/200';
 
+  followAllCount: number = 0;
+
+  typedName: string = '';
+
+  photoMessage: string = '';
+
   user1 = {
     name:'John',
     role: 'Front-End Developer',
@@ -30,11 +36,27 @@ export class App {
   }
 
   onLiked(){
-    this.likeCount += 1;
+    this.likeCount++;
   }
 
   message = '';
   onFollowed(name: string){
-    this.message = "You are now following " + name
+    this.message = "You are now following " + name;
+  }
+
+  onFollowAll(){
+    this.followAllCount++;
+  }
+
+  onType(event: Event){
+    this.typedName = (event.target as HTMLInputElement).value
+  }
+
+  onMouseOver(){
+    this.photoMessage = 'Hello';
+  }
+
+  onPhotoLeave(){
+    this.photoMessage = '';
   }
 }

@@ -14,5 +14,16 @@
 <app-user-card [name]="user1.name" [role]="user1.role" [bio]="user1.bio" (follow)="onFollowed($event)"  />
 <app-user-card [name]="user2.name" [role]="user2.role" [bio]="user2.bio" (follow)="onFollowed($event)"  />
 
-<img [src]="avatarUrl" [alt]="user1.name">
-<button [disabled] = " isFollowingAll " [title]="isFollowingAll ? 'you cannot follow' : 'follow every user on this page'">Follow All</button>
+<img [src]="avatarUrl" [alt]="photoMessage" (mouseover)="onMouseOver()" (mouseleave)="onPhotoLeave()">
+<p>{{photoMessage}}</p>
+<br>
+<button 
+[disabled] = " isFollowingAll " 
+[title]="isFollowingAll ? 'you cannot follow' : 'follow every user on this page'"
+(click)="onFollowAll()">Follow All
+</button>
+<p>{{followAllCount}}</p>
+
+<input type="text" placeholder="Type your name" (input)="onType($event)">
+
+<p>{{typedName}}</p>
